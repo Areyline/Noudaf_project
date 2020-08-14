@@ -1,0 +1,13 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}  user add {% endblock %}
+
+{% block body %}
+    <div class="row" id="liens">
+        <div class="col-md-10">
+            <a href="{{ path('noudaf_user_list') }}" class="btn btn-info"> Back to list </a>
+        </div>
+    </div>
+    {{ form(form) }}
+{% endblock %}

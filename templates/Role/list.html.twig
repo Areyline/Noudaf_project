@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} List Role {% endblock %}
+
+{% block body %}
+    <h2> List of Roles </h2>
+
+    <div class="row" id="liens">
+        <div class="col-md-10">
+            <a href="{{ path('noudaf_role_add') }}" class="btn btn-info"> Add Role</a>
+        </div>
+    </div>
+
+    <div class="row" id="role-list">
+        <div class="col-md-10">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th> Libelle </th>
+                    <th> Description</th>
+                    <th> Actions </th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for role in roles %}
+
+                    <tr>
+                        <td> {{ role.libelle }} </td>
+                        <td> {{ role.description }} </td>
+                        <td>
+                            <a href="{{ path('noudaf_role_edit', {id: role.id}) }}">Edit</a>
+                            <a href="{{ path('noudaf_role_delete', {id: role.id}) }}"> Delete </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock %}
